@@ -32,7 +32,7 @@ There are quite a few packages required to render and run the map, including Lea
 
 ## Speed Reader
 
-This tool was inspired by my previous experiments with [newspaper.py](https://pypi.python.org/pypi/newspaper), as well as speed-reading services such as [spritz](http://spritzinc.com/).  The intent is to allow command-line speed reading of news articles...
+This tool was inspired by my previous experiments with [newspaper.py](https://pypi.python.org/pypi/newspaper), as well as speed-reading services such as [spritz](http://spritzinc.com/).  The intent is to allow command-line speed reading of news articles.
 
 To run locally, clone the directory, then run
 ```
