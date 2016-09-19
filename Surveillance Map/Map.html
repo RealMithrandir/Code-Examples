@@ -1,0 +1,250 @@
+<html>
+	<head>
+
+		<title>Map</title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css"/>
+		<link rel="stylesheet" href="leaflet-routing-machine.css" />
+		<link rel="stylesheet" href="Control.Geocoder.css" />
+		<link rel="stylesheet" href="l.geosearch.css" />
+		<link rel="stylesheet" href="https://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OSMGeocoder.css"/>
+		<link rel="stylesheet" href="https://leaflet.github.io/Leaflet.draw/leaflet.draw.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.css" />
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css" />
+		
+		
+		<script>L_PREFER_CANVAS = true;</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+		<script src="leaflet-routing-machine.js"></script> 
+		<script src="Control.Geocoder.js"></script>
+		<script src="l.control.geosearch.js"></script>  
+		<script src="l.geosearch.provider.openstreetmap.js"></script>
+		<script src="https://k4r573n.github.io/leaflet-control-osm-geocoder/Control.OSMGeocoder.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+		
+				
+		<style>
+#map{ height: 100% }		
+img.error-not-fixed, img.error-fixed{
+    display:inline-block;
+    position:relative;
+    width:350px;
+	height:300px;
+    background:#fff!important;
+}
+img.error-fixed {
+    background: #CCC url(Images/alterror.png) 0 0 no-repeat!important;
+    text-indent: -9999px;
+    color: transparent!important;
+    -webkit-appearance: none!important;
+}
+#delete, #export {
+            position: absolute;
+            top:405px;
+            right:1495px;
+            z-index:100;
+            background:white;
+            color:black;
+            padding:6px;
+            border-radius:4px;
+            font-family: 'Helvetica Neue';
+            cursor: pointer;
+            font-size:12px;
+            text-decoration:none;
+        }
+        #export {
+            top:435px;
+        }
+
+	</style>
+		
+		<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//104.131.60.200/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//104.131.60.200/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+		
+	</head>
+	
+	<body>
+<style>
+    #overlay {
+        background: #ffffff;
+        color: #666666;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 5000;
+        top: 0;
+        left: 0;
+        float: left;
+        text-align: center;
+        padding-top: 25%;
+    }
+</style>
+<div id="overlay">
+<img src="Images/loader2.gif" alt="Loading" /><br/>
+LOADING...
+</div>
+	
+		<div id="map"></div>
+				
+		<script>
+				
+		// initialize the map
+		var map = L.map('map').setView([32.446081, 6.887689], 3);
+  
+		// load a tile layer
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+	
+	new L.Control.GeoSearch({
+    provider: new L.GeoSearch.Provider.OpenStreetMap(),
+	showMarker: false,
+}).addTo(map);
+	
+	L.Control.geocoder().addTo(map);
+		
+	L.Routing.control({
+		geocoder: L.Control.Geocoder.nominatim(),
+		lineOptions: {
+			styles: [ {color: 'white',opacity: 0.8, weight: 12},
+					{color: '#2676C6', opacity: 1, weight: 6}
+]}
+	}).addTo(map);	
+	
+	//geojson data
+			
+		var geoJsonData = {
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2016-04-23T05:17:03Z",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/54159406",
+      "properties": {
+        "@id": "node/54159406",
+        "highway": "traffic_signals",
+        "image_direction": "SE;NE;NW",
+        "man_made": "surveillance",
+        "source": "usgs_imagery_2008;survey;image",
+        "source_ref": "AM909_DSCV2295;AM909_DSCV2297;AM909_DSCV2366"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.502897,
+          33.764031
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/54551377",
+      "properties": {
+        "@id": "node/54551377",
+        "highway": "traffic_signals",
+        "image_direction": "S;W;E;N",
+        "man_made": "surveillance",
+        "source": "usgs_imagery_2007;survey;image",
+        "source_ref": "AM909_IMAG0148;AM909_IMAG0149;AM909_IMAG0150;AM909_IMAG0165"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.5666339,
+          34.1092732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/6124",
+      "properties": {
+        "@id": "node/6124",
+        "surveillance": "outdoor",
+        "image": "Images/512_4.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.264578,
+          44.985123
+        ]
+      }
+	},
+	{
+      "type": "Feature",
+      "id": "node/6125",
+      "properties": {
+        "@id": "node/6125",
+        "surveillance": "outdoor",
+        "image": "Images/512_5.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.263377,
+          44.985566
+        ]
+      }
+	},
+	{
+      "type": "Feature",
+      "id": "node/6126",
+      "properties": {
+        "@id": "node/6126",
+        "surveillance": "outdoor dome",
+        "image": "Images/512_6.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.241007,
+          44.977689
+        ]
+      }
+	}
+  ]
+};
+		var markers = L.markerClusterGroup();
+		var geoJsonLayer = L.geoJson(geoJsonData, {
+			onEachFeature: function (feature, layer) {
+				layer.bindPopup("<b>Camera Info:</b><br>" + "<b>Camera ID: </b>" + feature.id + "<br><b>Camera Location: </b>" + feature.properties.surveillance + "<img src=\"" + feature.properties.image + "\" class='error-fixed' alt/>", {minWidth:350});
+			}
+		});
+		markers.addLayer(geoJsonLayer);
+		map.addLayer(markers);
+		map.fitBounds(markers.getBounds());
+		
+	
+			
+			
+		</script>
+<script>
+    jQuery(window).load(function(){
+    jQuery('#overlay').fadeOut();
+    });
+</script>
+	</body>
+</html>
