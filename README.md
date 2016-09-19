@@ -8,7 +8,7 @@ Four projects are contained in this repository.  The projects, and how to run th
 ```
 Does anyone want to go to boston today? We can go down to the harbor and follow the parade.
 ```
-The application updates as new keywords are detected and visualizes how predicted likes, likers, and recommend words change as you try our posts.
+The application updates as new keywords are detected and visualizes how predicted likes, likers, and recommend words change as you try out posts.
 
 For a sample of the code I developed, look at *getFriends.py*
 
