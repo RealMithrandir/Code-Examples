@@ -26,7 +26,7 @@ results = []
 for tweet in tweepy.Cursor(api.search, q='%23' + hashtag).items(5000):
     results.append(tweet)
 
-# Create a function to convert a given list of tweets into a Pandas DataFrame.
+# Pandas DataFrame function.
 
 def toDataFrame(tweets):
 
@@ -62,17 +62,17 @@ def toDataFrame(tweets):
 # Pass the tweets list to the above function to create a DataFrame
 DataSet = toDataFrame(results)
 
-# 'None' is treated as null here, so I'll remove all the records having 'None' in their 'userTimezone' column
+# Remove all the records having 'None' in their 'userTimezone' column
 DataSet = DataSet[DataSet.userTimezone.notnull()]
 
 # Count the number of tweets in each time zone and get the first 10
 tzs = DataSet['userTimezone'].value_counts()[:10]
 print tzs
 
-# Create a bar-graph figure of the specified size
+# Create a bar-graph 
 plt.rcParams['figure.figsize'] = (15, 5)
 
-# Plot the Time Zone data as a bar-graph
+# Plot the time zone data as a bar-graph
 tzs.plot(kind='bar')
 
 # Assign labels and title to the graph to make it more presentable
