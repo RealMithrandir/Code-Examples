@@ -2,7 +2,7 @@
 
 Seven projects are contained in this repository.  The projects, and how to run them locally (when applicable), are described below.
 
-## Tweet Timezone Graph 
+## TwitterTimezone 
 
 This application captures data from the Twitter API via Tweepy, stores it in a Pandas dataframe, and visualizes it through matplotlib. This example graphs the top 10 timezones tweeting about a hashtag (first 5000 items).
 
@@ -23,7 +23,7 @@ python TweetTimezone.py
 ```
 when prompted, enter the topic/hashtag you want to analyze (no # needed).
 
-## Tweet Speed Reader
+## SpeedTweet
 
 The application combines experimentation with Tweepy and the Twitter API with the "Speed Reader" tool below. It captures tweets abgout a keyword(s) in near real-time, and displays them in a fashion similar to [spritz](http://spritzinc.com/). To install, download the file, and add your keys in these positions
 ```
