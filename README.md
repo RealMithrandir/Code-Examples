@@ -1,6 +1,41 @@
 # Code Samples
 
-Four projects are contained in this repository.  The projects, and how to run them locally (when applicable), are described below.
+Seven projects are contained in this repository.  The projects, and how to run them locally (when applicable), are described below.
+
+## Tweet Timezone Graph 
+
+This application captures data from the Twitter API via Tweepy, stores it in a Pandas dataframe, and visualizes it through matplotlib. This example graphs the top 10 timezones tweeting about a hashtag (first 5000 items).
+
+To install, download the file, run
+```
+pip install tweepy
+pip install pandas
+pip install matplotlib
+```
+then call
+```
+python TweetTimezone.py
+```
+when prompted, enter the topic/hashtag you want to analyze (no # needed).
+
+## Tweet Speed Reader
+
+The application combines experimentation with Tweepy and the Twitter API with the "Speed Reader" tool below. It captures tweets abgout a keyword(s) in near real-time, and displays them in a fashion similar to [spritz](http://spritzinc.com/). To install, download the file, run
+```
+python SpeedTweet.py
+```
+You will be prompted to enter a "desired reading rate" in words-per-minute (something around 150-200 is a good place to start).
+
+You will then be prompted to enter keywords to track, seperated by spaces. Popular topics work well because there won't be a break in the stream of information.
+
+
+## Politicheck
+
+Scraped and pickled the [Poilitifact](http://www.politifact.com/) website. The application loads the corpus, preprocesses, then prompts for text to analyze. To install, download the files, run
+```
+python cl.py
+```
+You will be prompted to enter a topic to analyze. Try something like "guns", "environment", "health".
 
 ## Will You Like Me
 
