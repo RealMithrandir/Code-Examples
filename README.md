@@ -6,7 +6,12 @@ Seven projects are contained in this repository.  The projects, and how to run t
 
 This application captures data from the Twitter API via Tweepy, stores it in a Pandas dataframe, and visualizes it through matplotlib. This example graphs the top 10 timezones tweeting about a hashtag (first 5000 items).
 
-To install, download the file, run
+To install, download the file, and add your keys in these positions
+```
+ckey = 'YOUR CONSUMER KEY'
+csecret = 'YOUR SECRET KEY'
+```
+run
 ```
 pip install tweepy
 pip install pandas
@@ -20,7 +25,14 @@ when prompted, enter the topic/hashtag you want to analyze (no # needed).
 
 ## Tweet Speed Reader
 
-The application combines experimentation with Tweepy and the Twitter API with the "Speed Reader" tool below. It captures tweets abgout a keyword(s) in near real-time, and displays them in a fashion similar to [spritz](http://spritzinc.com/). To install, download the file, run
+The application combines experimentation with Tweepy and the Twitter API with the "Speed Reader" tool below. It captures tweets abgout a keyword(s) in near real-time, and displays them in a fashion similar to [spritz](http://spritzinc.com/). To install, download the file, and add your keys in these positions
+```
+ckey = 'YOUR CONSUMER KEY'
+csecret = 'YOUR SECRET KEY'
+atoken = 'YOUR ACCESS TOKEN'
+asecret = 'YOUR SECRET TOKEN'
+```
+then run
 ```
 python SpeedTweet.py
 ```
