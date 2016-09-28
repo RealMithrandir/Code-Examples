@@ -8,8 +8,8 @@ This application captures data from the Twitter API via Tweepy, stores it in a P
 
 To install, download the file, and add your keys in these positions
 ```
-ckey = 'YOUR CONSUMER KEY'
-csecret = 'YOUR SECRET KEY'
+consumerKey = 'YOUR CONSUMER KEY'
+consumerSecret = 'YOUR SECRET KEY'
 ```
 run
 ```
