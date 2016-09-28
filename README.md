@@ -6,7 +6,7 @@ Seven projects are contained in this repository.  The projects, and how to run t
 
 This application captures data from the Twitter API via Tweepy, stores it in a Pandas dataframe, and visualizes it through matplotlib. This example graphs the top 10 timezones tweeting about a hashtag (first 5000 items).
 
-To install, download the file, and add your keys in these positions
+To install, download the file, and add your keys in these positions (lines 6 and 7)
 ```
 consumerKey = 'YOUR CONSUMER KEY'
 consumerSecret = 'YOUR SECRET KEY'
@@ -21,7 +21,7 @@ then call
 ```
 python TweetTimezone.py
 ```
-when prompted, enter the topic/hashtag you want to analyze (no # needed).
+when prompted, enter the topic/hashtag you want to analyze (no # needed, it will be added automatically).
 
 ## SpeedTweet
 
