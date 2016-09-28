@@ -1,4 +1,4 @@
-# Code Samples
+# Code Examples
 
 Seven projects are contained in this repository.  The projects, and how to run them locally (when applicable), are described below.
 
