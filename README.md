@@ -25,7 +25,7 @@ when prompted, enter the topic/hashtag you want to analyze (no # needed, it will
 
 ## SpeedTweet
 
-The application combines experimentation with Tweepy and the Twitter API with the "Speed Reader" tool below. It captures tweets abgout a keyword(s) in near real-time, and displays them in a fashion similar to [spritz](http://spritzinc.com/). To install, download the file, and add your keys in these positions
+The application combines experimentation with Tweepy and the Twitter API with the "Speed Reader" tool below. It captures tweets about a keyword(s) in near real-time, and displays them in a fashion similar to [spritz](http://spritzinc.com/). To install, download the file, and add your keys in these positions (lines 6, 7, 8, 9)
 ```
 ckey = 'YOUR CONSUMER KEY'
 csecret = 'YOUR SECRET KEY'
@@ -38,7 +38,7 @@ python SpeedTweet.py
 ```
 You will be prompted to enter a "desired reading rate" in words-per-minute (something around 150-200 is a good place to start).
 
-You will then be prompted to enter keywords to track, seperated by spaces. Popular topics work well because there won't be a break in the stream of information.
+You will then be prompted to enter keywords to track, separated by spaces. Popular topics work well because there won't be a break in the stream of information.
 
 
 ## Politicheck
