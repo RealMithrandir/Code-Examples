@@ -71,7 +71,9 @@ python NewsSummary.py
 ```
 ## Surveillance Map
 
-This [surveillance map](https://activism.tech/map.html) was developed a part of [activism.tech](https://activism.tech), as a tool to visualize global surveillance as well as give people to ability to plan routes with camera locations in mind.
+This surveillance map was developed a part of activism.tech, as a tool to visualize global surveillance as well as give people to ability to plan routes with camera locations in mind.
+
+![alt text](https://rightsanddissent.org/wp-content/uploads/2016/04/MapZoom.png)
 
 Only a small number of cameras are included for ease of dowload and testing.
 
