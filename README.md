@@ -51,7 +51,7 @@ You will be prompted to enter a topic to analyze. Try something like "guns", "en
 
 ## Will You Like Me
 
-[Will You Like Me](http://williamsplace.synology.me/harriette/wylm/index.html) was a group project developed for a capstone Data Visualization class. The linked instance is using a static sample data (it would generally require you to login to Facebook to extract personal posting history, friends, etc.) To see how the tool works try typing
+Will You Like Me was a group project developed for a capstone Data Visualization class. The linked instance is using a static sample data (it would generally require you to login to Facebook to extract personal posting history, friends, etc.) To see how the tool works try typing
 ```
 Does anyone want to go to boston today? We can go down to the harbor and follow the parade.
 ```
